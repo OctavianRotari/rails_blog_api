@@ -2,10 +2,10 @@
 
 one:
   author: MyString
-  content: MyString
+  body: MyString
   post: one
 
 two:
   author: MyString
-  content: MyString
+  body: MyString
   post: two

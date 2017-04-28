@@ -3,11 +3,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @post = @posts.each do |post|
-      post.attributes.merge({
-        total_comments: post.total_comments
-      })
-    end
     json_response(@posts)
   end
 
@@ -33,7 +28,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:title, :category, :content, :total_comments)
+    params.permit(:title, :category, :body, :total_comments)
   end
 
   def set_post
