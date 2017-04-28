@@ -3,6 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @post = @posts.each do |post|
+      post.attributes.merge({
+        total_comments: post.total_comments
+      })
+    end
     json_response(@posts)
   end
 
